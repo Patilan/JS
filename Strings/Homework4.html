@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Strings - Methods</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+  
+   
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+
+
+        //You are given a text. Write a function that changes the text in all regions:
+        // - <upcase>text</upcase> to uppercase.
+        // - <lowcase>text</lowcase> to lowercase
+        // - <mixcase>text</mixcase> to mix casing(random)
+
+        var text = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.";
+        var changedText = changeText(text);
+        
+
+        jsConsole.writeLine(changedText);
+
+        function changeText(text) {
+
+            //Search the text for this kind of regexp
+            while (text.search(/<mixcase>(.*?)<\/mixcase>/) != -1)
+            {
+                text.match(/<mixcase>(.*?)<\/mixcase>/) //when it matches
+                var str = new String(); 
+                for (var i = 0; i < RegExp.lastMatch.length; i++) {
+                    if (i % 2 == 1) {
+                        str += RegExp.lastMatch[i].toUpperCase(); //changes to up case every i which can be divided by two and has 1 surplus
+                    }
+                    else {
+                        str += RegExp.lastMatch[i]; //else stay the same 
+                    }
+                }
+                text = text.replace(/<mixcase>(.*?)<\/mixcase>/, str);
+            }
+
+            //Search the text for this kind of regexp
+            while (text.search(/<upcase>(.*?)<\/upcase>/) != -1)
+            {
+                //replaces upcase found with upper case of it
+                text = text.replace(/<upcase>(.*?)<\/upcase>/, RegExp.lastMatch.toUpperCase())
+            }
+
+            //Search the text for this kind of regexp
+            while (text.search(/<lowcase>(.*?)<\/lowcase>/) != -1)
+            {
+                //replaces lowcase found with lower case of it
+                text = text.replace(/<lowcase>(.*?)<\/lowcase>/, RegExp.lastParen.toLowerCase())
+            }
+
+            return text;
+        }
+        
+
+    </script>
+</body>
+</html>

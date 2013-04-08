@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+        <label for="tb-number">Number</label>
+	    <input id="tb-number" type="text" class="js-console-input" />
+	    <a href="#" class="js-console-btn" onclick="readNumber()">Print sign</a>
+        
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Write a function that returns the last digit of given integer 
+    	    //as an English word. Examples: 512  "two", 1024  "four", 12309  "nine"
+
+    	    function readNumber() {
+    	        var n = jsConsole.readFloat("#tb-number");
+
+    	        if (n < 10) {
+    	            switch (n) {
+    	                case 1:
+    	                    return jsConsole.writeLine("One");
+    	                case 2:
+    	                    return jsConsole.writeLine("Two");
+    	                case 3:
+    	                    return jsConsole.writeLine("Three");
+    	                case 4:
+    	                    return jsConsole.writeLine("Four");
+    	                case 5:
+    	                    return jsConsole.writeLine("Five");
+    	                case 6:
+    	                    return jsConsole.writeLine("Six");
+    	                case 7:
+    	                    return jsConsole.writeLine("Seven");
+    	                case 8:
+    	                    return jsConsole.writeLine("Eight");
+    	                case 9:
+    	                    return jsConsole.writeLine("Nine");
+    	                case 0:
+    	                    return jsConsole.writeLine("Zero");
+    	            }
+    	        }
+
+    	        else {
+                    for (var i = 0; n >= 10; i++) {
+                        n = n % 10;
+
+                        }
+    	            switch (n) {
+    	            case 1:
+    	                return jsConsole.writeLine("One");
+    	            case 2:
+    	                return jsConsole.writeLine("Two");
+    	            case 3:
+    	                return jsConsole.writeLine("Three");
+    	            case 4:
+    	                return jsConsole.writeLine("Four");
+    	            case 5:
+    	                return jsConsole.writeLine("Five");
+    	            case 6:
+    	                return jsConsole.writeLine("Six");
+    	            case 7:
+    	                return jsConsole.writeLine("Seven");
+    	            case 8:
+    	                return jsConsole.writeLine("Eight");
+    	            case 9:
+    	                return jsConsole.writeLine("Nine");
+    	            case 0:
+    	                return jsConsole.writeLine("Ten");
+    	        
+
+    	            }
+    	        }
+    	    }
+        </script>	
+           
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+        
+	   
+        
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Write functions for working with shapes in  standard Planar coordinate system
+    	    // - Points are represented by coordinates P(X, Y)
+    	    // - Lines are represented by two points, marking their beginning and ending
+    	    //   -- L(P1(X1,Y1),P2(X2,Y2))
+    	    // - Calculate the distance between two points
+    	    // - Check if three segment lines can form a triangle
+
+
+    	        var line1 = {
+    	            point1: { x: 5, y: 4 }, point2: {x: 3, y: 1}
+    	        }
+                //Creating object line with 
+    	        var line2 = {
+    	            point1: {x:-1, y: 3},point2: {x:4, y: -4}
+    	        }
+
+    	        var line3 = {
+    	            point1: {x: -2, y: -5}, point2: {x: 2, y:-3}
+    	        }
+
+    	        function distance (firstPoint, secondPoint) {
+    	            return (Math.sqrt(Math.pow(secondPoint.x - firstPoint.x, 2) + Math.pow(secondPoint.y - firstPoint.y, 2)));
+                    //function returns result for points distance with the formula: sqrt (power(x2-x1, ^2) + power(y2-y1, ^2)) 
+    	        }
+                    //declaring lengths functions which will calculate the distance
+    	        var line1Length = distance(line1.point1, line1.point2);
+    	        var line2Length = distance(line2.point1, line2.point2);
+    	        var line3Length = distance(line3.point1, line3.point2);
+    	            
+                    //no explanation needed
+    	        jsConsole.writeLine("First line points distance is: " + distance(line1.point1, line1.point2));
+    	        jsConsole.writeLine("Second line points distance is: " + distance(line2.point1, line2.point2));
+    	        jsConsole.writeLine("Third line points distance is: " + distance(line3.point1, line3.point2));
+
+
+    	            //function for triangle checking if any variable points can form a triangle
+    	            //two of the lesser length's sum must be > then the biggest of them all so they can form a triangle
+    	        function triangle(line1, line2, line3) {
+    	            return (line1 + line2 > line3) && (line2 + line3 > line1) && (line3 + line1 > line2);
+    	        }
+
+    	        
+                    //Triangle True/False
+                jsConsole.writeLine("Can the given lines form a triangle? Result: " + triangle(line1Length, line2Length, line3Length));
+
+
+    	    
+        </script>	
+           
+</body>
+</html>

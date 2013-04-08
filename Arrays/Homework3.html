@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+        <a href="#" onclick="arrayButton()">Calculate</a>
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Write a script that finds the maximal sequence
+            //in an array. Example: {3, 2, 3, 4, 2, 2, 2, 4}  {2, 2, 2}.
+
+    	    function arrayButton() {
+    	        var myArray = [2, 2, 0, 0, 0, 2, 2, 3, 3, 3, 2, 2, 2, 1]; //initialize the array
+
+    	        var sequence = 1; //number of sequences
+    	        var longSequence = 0; //the longest sequence
+    	        var bestSequence = 0; //choosing the longest sequence
+    	        var count = 0; // A count for the number of sequences
+
+    	        for (var index = 0; index < myArray.length - 1; index++) {
+    	            if (myArray[index] == myArray[index + 1]) {
+    	                sequence++;
+    	                if (sequence >= longSequence) //if it finds another sequence with the same length or longer it uses it
+    	                {
+    	                    longSequence = sequence;
+    	                    bestSequence = myArray[index];
+    	                }
+    	            }
+    	            else {
+    	                sequence = 1;
+    	            }
+    	        }
+
+    	        jsConsole.writeLine("The maximal sequence is: ");
+    	        while (count < longSequence) {
+    	            jsConsole.write(bestSequence + " ");
+    	            count++;
+    	        }
+    	    }
+
+        </script>	
+           
+</body>
+</html>

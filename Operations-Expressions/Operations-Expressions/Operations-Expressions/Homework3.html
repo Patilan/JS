@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body onload="run()">
+    <div id="js-console">
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        //Write an expression that calculates rectangle’s area by given width and height.
+        function calculateRectangleArea(width, height) {
+            return width * height;
+        }
+
+
+        function run() {
+            document.getElementById("area").innerHTML = calculateRectangleArea(2, 6);
+        }
+    </script>
+        <div>Calculated area is</div>
+        <div id="area"></div>
+      
+
+    </div>
+</body>
+</html>

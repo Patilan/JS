@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Strings - Methods</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+  
+   
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+
+
+        //Write a JavaScript function that finds how many times a substring
+        // is contained in a given text (perform case insensitive search).
+        // - Example: The target substring is "in". The text is as follows:
+
+
+        var text = "We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days";
+        
+        //Making text lower case and match in in the whole text
+        var count = text.toLowerCase().match(/in/g);
+        var found = 0;
+
+        //count the length of count and adding +1 for every "in" we have
+        for (var i = 0; i < count.length; i++) {
+            found++;
+        }
+        
+        //Print result
+        jsConsole.writeLine("There are " + found + " in's in the text." );
+
+
+    </script>
+</body>
+</html>

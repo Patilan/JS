@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+        <a href="#" class="js-console-btn" onclick="Check()">Check</a>
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Write a function that finds all the occurrences of word in a text
+    	    // - The search can case sensitive or case insensitive
+    	    // - Use function overloading
+
+
+            function Check() {
+    	    var text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Proin tristique lorem justo lobortis interdum eleifend augue sapien condimentum nisl mattis placerat eros nunc vitae augue";
+    	    var wordSearching = "lorem";
+    	    var isCaseSensitive = false;
+
+    	    jsConsole.writeLine("The text we are searching:");
+    	    jsConsole.writeLine(text);
+    	    jsConsole.writeLine();
+    	    WordsFound(text, wordSearching);
+    	    WordsFound(text, wordSearching, true);
+
+    	    function WordsFound(text, wordSearching, isCaseSensitive) {
+    	        isCaseSensitive = isCaseSensitive || false;
+    	        var foundedWords = 0;
+
+    	        if (isCaseSensitive === false) {
+    	            var str = text.split(wordSearching);
+    	            //splits the searching words from the text and adds them to str array. 
+                    //split is case insensitive
+
+    	            for (var numberOfWords in str) // iterates all the indexes of the array
+    	            {
+    	                foundedWords++; //adds up everytime the a str index has been iterated 
+
+    	            }
+    	            jsConsole.writeLine("The number of case insensitive " + wordSearching + " found in the text is:" + foundedWords);
+    	            
+    	        }
+
+    	        else {
+    	            var index = text.indexOf(wordSearching);
+                    //index is case sensitive
+
+    	            while (index >= 0) {
+    	                foundedWords++;
+    	                index = text.indexOf(wordSearching, index + 1);
+
+    	            }
+    	            jsConsole.writeLine("The number of case sensitive " + wordSearching + " found in the text is:" + foundedWords);
+    	        }
+
+    	    }
+
+            }
+        </script>	
+           
+</body>
+</html>

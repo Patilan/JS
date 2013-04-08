@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body onload="run()">
+
+    <div id="js-console">
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+    //Write an expression that checks if given integer is odd or even.
+    function checkOdd(number)
+    {
+        if (number % 2 == 0)
+        {
+		return "Even"
+	    }
+
+        else
+        {
+		return "Odd"
+	    }
+
+    }
+
+
+    function run(){
+        document.getElementById("check1").innerHTML = checkOdd(13);
+        document.getElementById("check2").innerHTML = checkOdd(16);
+    }
+        </script>
+
+    <div id="check1"></div>
+    <div id="check2"></div>
+
+    </div>
+
+</body>
+</html>

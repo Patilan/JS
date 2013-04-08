@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+        <label for="tb-number">Number</label>
+	    <input id="tb-number" type="text" class="js-console-input" />
+	    <a href="#" class="js-console-btn" onclick="readNumber()">Print sign</a>
+        
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Write a function that reverses the digits of given 
+    	    //decimal number. Example: 256  652
+
+    	    
+    	    function readNumber() {
+    	     
+    	        var num = jsConsole.readFloat("#tb-number");
+    	        var reversed = num.toString().split('').reverse().join('');
+    	        //converts the num to a string, splits it with a white space,
+    	        //reverses it and then join the numbers again. Voala!
+
+    	        jsConsole.writeLine(reversed);
+    	   
+    	    }
+        </script>	
+           
+</body>
+</html>

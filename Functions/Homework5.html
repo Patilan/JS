@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+     
+       <label for="number">Number</label>
+	   <input id="number" type="text" class="js-console-input" />
+
+       
+
+	    <a href="#" class="js-console-btn" onclick="readNumber()">Read Array</a>
+
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+
+
+    	    //Write a function that counts how many times given number appears in 
+    	    //given array. Write a test function to check if the function is working correctly.
+
+            function readNumber() {
+         
+            var myArray = [2, 3, 4, 5, 6, 7, 7, 3, 1, 0, 9, 8, 6, 6, 3, 3, 3];
+            
+            var number = jsConsole.readFloat("#number");
+
+            var count = 0;
+
+            for (var i = 0; i < myArray.length; ++i) 
+                //For counter 
+            {
+                if (myArray[i] == number) //checks if the number on the pos of the array is equal to the choosen numb
+                    
+    	            count++; //if the above is true it adds to the count var
+    	    }
+
+    	    jsConsole.writeLine("The number appears " + count + " times.");
+            }
+    </script>
+</body>
+</html>

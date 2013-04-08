@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Strings - Methods</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div data-type="template" id="list-item">
+        <strong>-{name}-</strong> <span>-{age}-</span>
+    </div>
+
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+
+        //Write a function that creates a HTML UL using a template for every HTML LI. 
+        //The source of the list should an array of elements. Replace all placeholders marked 
+        //with –{…}–   with the value of the corresponding property of the object.
+
+        //list of ppl
+        var people = [{ name: "pesho", age: 25 }, { name: "gosho", age: 22 }, { name: "dancho", age: 33 }];
+        //get element with id list-item
+        var temp = document.getElementById("list-item").innerHTML;
+        //generate the list with the function
+        var finalArr = generateList(temp, people);
+
+        for (var i = 0; i < finalArr.length; i += 2) {
+            //print tags plus the peoples information on every i (i = pesho and i+1=25....etc )
+            jsConsole.writeLine("<ul><li><strong>" + finalArr[i] + "</strong><span>" + finalArr[i + 1] + "</span></li><li>…</li>…</ul>")
+        }
+        
+
+        function generateList(temp, people) {
+            var holder = temp;
+            var liArr = [];
+
+            for (var person in people) {
+                //index and index2 represent the first found name and age 
+                var index = temp.indexOf("{name}");
+                var index2 = temp.indexOf("{age}");
+
+                //replace name from the html with people 
+                temp = temp.replace("{name}", people[person].name);
+                //push the in the array the substring which starts from index with length equal to the saved names length in people
+                liArr.push(temp.substr(index, people[person].name.length));
+                temp = holder;
+
+                //same as above except theat we have age to string converted
+                temp = temp.replace("{age}", people[person].age);
+                liArr.push(temp.substr(index2, people[person].age.toString().length));
+                temp = holder;
+            }
+            return liArr;
+        }
+
+
+
+    </script>
+</body>
+    </html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Strings - Methods</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="input">
+            <label for="correct">Your array:</label>
+            <input type="text" id="correct" />
+        </div>
+       
+            <a href="#" onclick="checkButton()">Check</a>
+        
+  
+   
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+
+
+        //Write a JavaScript function to check if in a given expression the brackets are put correctly.
+        // - Example of correct expression: ((a+b)/5-d).
+        // - Example of incorrect expression: )(a+b)).
+
+        function checkButton() {
+           
+            var correct = jsConsole.read('#correct'); //reads the input
+
+            //Splits the string by brackets and checks if they have the same amount of brackets. Else they dont match.
+            if (correct.split('(').length == correct.split(')').length) {
+                jsConsole.writeLine('Brackets are matched. The expression is correct!');
+            }
+            
+            else {
+                jsConsole.writeLine('Brackets are not matched. The expression is incorrect!')
+            }
+
+            
+        }
+
+    </script>
+</body>
+</html>

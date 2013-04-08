@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+        
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Write a function that groups an array of persons by age,
+    	    //first or last name. The function must return an associative array,
+    	    //with keys - the groups, and values -arrays with persons in this groups
+    	    // - Use function overloading (i.e. just one function)
+    
+    var persons = [
+          { firstName: "Shano", lastName: "Kondak-ov", age: 27 },
+          { firstName: "Patilan", lastName: "Petrov", age: 26 },
+          { firstName: "Patilan", lastName: "Cekov", age: 25 }
+      ]
+
+    	    
+    	    var groupedByAge = grouped(persons, "age");
+    	    var groupedByFname = grouped(persons, "firstName");
+    	    var groupedByLname = grouped(persons, "lastName");
+        
+    	    //Printing
+    	    for (var i in groupedByAge) {
+    	        jsConsole.writeLine(i+" : "+ groupedByAge[i]);
+    	    }
+    	    for (var i in groupedByFname) {
+    	        jsConsole.writeLine(i+" : "+groupedByFname[i]);
+    	    }
+    	    for (var i in groupedByLname) {
+    	        jsConsole.writeLine(i + " : " + groupedByLname[i]);
+    	    }
+
+    	    
+    	    function grouped(person, property) //Function
+    	    {
+    	        var array = new Array(); //new array
+    	        for (var i = 0; i < person.length; i++) {
+                
+    	            for (var j in person[i]) {
+                    
+    	                if (j==property) {
+    	                    array.push(person[i][j]);
+    	                }
+    	            }
+    	        }
+                
+                //counter
+    	        var wcount = {};
+    	        var word = {};
+    	        for (var i in array) {
+    	            word = array[i];
+    	            if (wcount[word]) {
+    	                wcount[word]++;
+    	            }
+    	            else {
+    	                wcount[word] = 1;
+    	            }
+    	        }
+
+    	        return wcount;
+            
+    	    }
+
+        </script>	
+           
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body onload="run()">
+    <div id="js-console">
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        //Write a boolean expression that checks for given integer if it
+        //can be divided (without remainder) by 7 and 5 in the same time.
+        function checkForDivisionBy7and5(number) {
+
+            if (number % 5 == 0 && number % 7 == 0) {
+                return number + " can be divided by 5 and 7";
+            } else {
+                return number + " can not be divided by 5 and 7";
+            }
+        }
+
+        function run() {
+            document.getElementById("check1").innerHTML = checkForDivisionBy7and5(49);
+            document.getElementById("check2").innerHTML = checkForDivisionBy7and5(35);
+        }
+    </script>
+        <div id="check1"></div>
+         <div id="check2"></div>
+
+    </div>
+</body>
+</html>

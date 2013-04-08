@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Strings - Methods</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+  
+   
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+
+        // Write a function that extracts the content of a html page given as 
+        //text. The function should return anything that is in a tag, without the tags:
+
+        var html = "<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>";
+        jsConsole.writeLine(returnTextInTags(html))
+
+
+        function returnTextInTags(text) {
+            var tags = String();
+
+            while (text.search(/>(.*?)</) != -1)
+            {
+                text = text.replace(/>(.*?)</, "!")
+                text.match(/>(.*?)</);
+                tags += RegExp.lastParen;
+            }
+            return tags
+        }
+
+
+    </script>
+</body>
+</html>

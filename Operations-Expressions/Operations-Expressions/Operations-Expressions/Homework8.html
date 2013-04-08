@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+
+<body onload="run()">
+
+    <div id="js-console">
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //Write an expression that calculates trapezoid's area by given sides a and b and height h.
+        function trapezoidArea(a, b, h) {
+            return (a + b) * h / 2;
+        }
+
+        function run() {
+            document.getElementById("check").innerHTML = trapezoidArea(4, 6, 2);
+
+        }
+        </script>
+        <div>Trapezoid area is:</div>
+        <div id="check"></div>
+  
+    </div>
+</body>
+</html>

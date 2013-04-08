@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Strings - Methods</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+  
+     <a href="#" onclick="parseURL()">Parse</a>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+
+        //Write a script that parses an URL address given in the format:
+        //and extracts from it the [protocol], [server] and [resource] elements. 
+        //Return the elements in a JSON object.For example from the URL http://www.devbg.org/forum/index.php 
+        //the following information should be extracted:
+
+        function parseURL() {
+            var url = "http://www.devbg.org/forum/index.php";
+            jsConsole.writeLine(url);
+
+            //protocol has a value from 0 to the index of : in url
+            var protokol = url.substring(0, url.indexOf(":"));
+            //server 
+            var server = url.substring(url.indexOf(":") + 3, url.indexOf("/", url.indexOf(":") + 3));
+            //resource 
+            var resource = url.substr(url.indexOf("/", url.indexOf(":") + 3))
+            //declaring the elements in a json object
+            var json = { "Protokol": protokol, "Server": server, "Resource": resource };
+            jsConsole.writeLine("Protokol: " + json.Protokol);
+            jsConsole.writeLine("Server: " + json.Server);
+            jsConsole.writeLine("Resource: " + json.Resource);
+        }
+
+
+    </script>
+</body>
+</html>

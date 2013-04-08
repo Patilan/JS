@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body onload="run()">
+
+    <div id="js-console">
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //Write an expression that checks if given print (x,  y) is within a circle K(O, 5).
+        function checkIfPointIsInCircle(x, y, radius) {
+            if ((Math.pow(x, 2) + Math.pow(y, 2)) < Math.pow(radius, 2)) {
+                return "Point is within the circle K(0," + radius + ")";
+            }
+            else {
+                return "Point is outside circle K(0," + radius + ")";
+            }
+        }
+
+        function run() {
+            document.getElementById("check").innerHTML = checkIfPointIsInCircle(1, 2, 5);
+        }
+        </script>
+        
+        <div id="check"></div>
+   
+
+    </div>
+</body>
+</html>

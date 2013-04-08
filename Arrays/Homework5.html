@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+        <a href="#" onclick="arrayButton()">Calculate</a>
+        <div id="js-console"> </div>
+        <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Sorting an array means to arrange its elements in increasing order. 
+    	    //Write a script to sort an array. Use the "selection sort" algorithm: 
+    	    //Find the smallest element, move it at the first position, find the smallest 
+    	    //from the rest, move it at the second position, etc.Hint: Use a second array
+
+    	    function arrayButton() {
+    	        var numbers = [6, 7, -5, 4, -2, 5, 1, 3];
+    	        numbers.sort(function (a, b) {
+    	            return a - b;
+    	        });
+    	        jsConsole.writeLine(numbers);
+    	    }
+        </script>	
+           
+</body>
+</html>
+

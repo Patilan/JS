@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body onload="run()">
+    <div id="js-console">
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        //Write an expression that checks for given integer
+        //if its third digit (right-to-left) is 7. E. g. 1732 ? true.
+        function checkThirdDigitfor7(number) {
+            number = parseInt(number / 100);
+            if (number % 10 == 7) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        function run() {
+            document.getElementById("check1").innerHTML = checkThirdDigitfor7(5237);
+            document.getElementById("check2").innerHTML = checkThirdDigitfor7(4778);
+        }
+    </script>
+        
+        <div id="check1"></div>
+        <div id="check2"></div>
+      
+
+    </div>
+</body>
+</html>

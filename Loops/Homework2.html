@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+     <style>
+    input[type=text]{
+        border:1px solid black;
+        padding:5px 15px;
+        background-color:black;
+        color:white;
+        font-family:Consolas;	
+        margin-bottom:5px;
+    }
+
+    a{
+        color:black;
+        border:1px solid black;
+        padding:5px 15px;	
+        text-decoration:none;	
+        display:inline-block;	
+        margin: 15px 0;
+    }
+
+    a:hover{
+         text-decoration:underline;
+    }
+    </style>
+</head>
+
+<body>
+      	
+            <label for="tb-first">Number: </label>
+            <input type="text" id="tb-first"/>
+       
+             <a href="#" onclick="onFindBiggerButtonClick()">Print </a>
+     
+        <div id="js-console"> </div>
+        
+         <script src="scripts/js-console.js"></script>
+
+    	<script>
+    	    //Write a script that prints all the numbers from 1 to N,
+    	    //that are not divisible by 3 and 7 at the same time
+
+
+    	    function onFindBiggerButtonClick() {
+    	        var number = jsConsole.readFloat("#tb-first");
+    	        var counter = 1;
+
+    	        while (counter <= number) {
+
+    	             if ((counter % 3 == 0) && (counter % 7 == 0)) {
+    	                
+    	                jsConsole.writeLine("Abracadabra. This number can be divided by 3 and 7 both: " + counter);
+    	            } 
+    	            counter++;
+    	        }
+    	       
+
+    	    }
+        </script>	
+           
+</body>
+</html>
